@@ -8,8 +8,7 @@ set :server, 'webrick'
 set :public, 'public'
 enable :static
 
-set :database, {adapter: 'postgresql',
-                database: 'wdinews'}
+set :database, {adapter: 'postgresql'}
 
 class Story < ActiveRecord::Base
   has_many :comments
