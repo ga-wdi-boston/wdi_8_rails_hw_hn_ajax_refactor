@@ -10,7 +10,7 @@ set :public, 'public'
 enable :static
 
 set :database, {adapter: 'postgresql'}
-DataMapper.setup(:default, (ENV["DATABASE_URL"]))
+DataMapper.setup(:default, ENV["DATABASE_URL"])
 
 class Story < ActiveRecord::Base
   has_many :comments
