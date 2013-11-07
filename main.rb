@@ -9,8 +9,7 @@ set :public, 'public'
 enable :static
 
 set :database, {adapter: 'postgresql',
-                database: 'wdinews',
-                host: 'localhost'}
+                database: 'wdinews'}
 
 class Story < ActiveRecord::Base
   has_many :comments
