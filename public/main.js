@@ -12,9 +12,9 @@ H2ck3rNews.getStories = function() {
 
 H2ck3rNews.render_stories = function(data) {
   $(data).each(function(index, story) {
-    $('#stories').append("<div id='story" + story.id 
+    $('#stories').append("<li id='story" + story.id 
                        + "'><a href='" + story.link + "'>" 
-                       + story.title + "</a></div>");
+                       + story.title + "</a></li>");
   });
 };
 
