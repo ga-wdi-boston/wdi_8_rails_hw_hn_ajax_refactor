@@ -22,6 +22,10 @@ get '/' do
   erb :index
 end
 
+get '/stories.json' do
+  Story.all.to_json
+end
+
 get '/new' do 
   erb :new
 end
