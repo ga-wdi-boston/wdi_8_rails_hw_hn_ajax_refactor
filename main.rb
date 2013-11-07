@@ -3,6 +3,7 @@ require 'sinatra/reloader' if development?
 require 'pg'
 require 'pry'
 require 'sinatra/activerecord'
+require 'data_mapper'
 
 set :server, 'webrick'
 set :public, 'public'
