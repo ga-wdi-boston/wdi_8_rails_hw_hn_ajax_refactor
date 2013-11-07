@@ -3,14 +3,11 @@ require 'sinatra/reloader' if development?
 require 'pg'
 require 'pry'
 require 'sinatra/activerecord'
-require 'data_mapper'
+require './config/environments'
 
-set :server, 'webrick'
+# set :server, 'webrick'
 set :public, 'public'
 enable :static
-
-set :database, {adapter: 'postgresql'}
-DataMapper.setup(:default, ENV["DATABASE_URL"])
 
 class Story < ActiveRecord::Base
   has_many :comments
