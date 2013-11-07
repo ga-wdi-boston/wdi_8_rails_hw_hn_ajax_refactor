@@ -1,15 +1,14 @@
 $(document).ready(function() {
 	ajax_load('/stories.json');
-	$('#stories-list').on('click', $('.upvote'), function(event) {
+	$('#stories-list').on('click', '.upvote', function(event) {
 		event.preventDefault();
 		upvoteStory(event.target.id);
 	});
-	$('#stories-list').on('click', $('.delete'), function(event) {
+	$('#stories-list').on('click', '.delete', function(event) {
 		event.preventDefault();
 		deleteStory(event.target.id);
 	});
 });
-
 
 var list_stories = function(stories) {
 	$('#stories-list').html('');

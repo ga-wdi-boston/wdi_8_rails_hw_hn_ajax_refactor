@@ -5,7 +5,7 @@ require 'pry'
 require 'sinatra/activerecord'
 require './config/environments'
 
-# set :server, 'webrick'
+set :server, 'webrick'
 set :public, 'public'
 enable :static
 
@@ -26,12 +26,11 @@ get '/stories.json' do
 end
 
 post '/submit' do
-  Story.create(title: params[:title], link: params[:link], body: params[:body]).to_json
-  redirect 'index.html'
+  Story.create(title: params[:title], link: params[:link], body: params[:body], up_votes: 0).to_json
 end
 
 post '/upvote/:id' do
-  Story.increment_counter(:up_votes, params[:id])
+  Story.increment_counter(:up_votes, params[:id]).to_json
 end
 
 post '/delete/:id' do
